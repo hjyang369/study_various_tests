@@ -1,0 +1,21 @@
+@use "@/pages/themeDarkLight/dark.module.scss" as dark;
+@use "@/pages/themeDarkLight/light.module.scss" as light;
+
+[data-theme="light"] {
+  --color-text: #{dark.$C_BLUE_10};
+  --color-text2: #{dark.$C_BLUE_40};
+  --color-background: #{dark.$C_BLUE_20};
+  --color-btn: #{dark.$C_BLUE_30};
+}
+
+[data-theme="dark"] {
+  --color-text: #{light.$C_BLUE_10};
+  --color-text2: #{light.$C_BLUE_40};
+  --color-background: #{light.$C_BLUE_20};
+  --color-btn: #{light.$C_BLUE_30};
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-text2);
+}

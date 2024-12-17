@@ -1,0 +1,6 @@
+@use "./theme.scss" as *;
+
+html,
+body {
+  background-color: var(--color-background);
+}

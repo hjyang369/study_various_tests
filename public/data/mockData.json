@@ -1,0 +1,12 @@
+[
+  {
+    "id": 1,
+    "title": "Next.js Tutorial",
+    "description": "Learn how to use Next.js with mock data."
+  },
+  {
+    "id": 2,
+    "title": "Server Side Rendering",
+    "description": "Understand how to fetch data with getServerSideProps."
+  }
+]

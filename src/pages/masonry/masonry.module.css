@@ -1,0 +1,27 @@
+.container {
+  width: 100%;
+  max-width: 967px;
+}
+
+.responsiveItem {
+  width: 100%;
+  max-width: 290px;
+}
+
+@media (max-width: 900px) {
+  .container {
+    max-width: 640px;
+  }
+  .responsiveItem {
+    max-width: 200px;
+  }
+}
+
+@media (max-width: 640px) {
+  .container {
+    max-width: 320px;
+  }
+  .responsiveItem {
+    max-width: 320px;
+  }
+}
