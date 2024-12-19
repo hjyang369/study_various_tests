@@ -1,12 +1,10 @@
-import { Inter } from "next/font/google";
 import Link from "next/link";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   return (
-    <div>
+    <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
       <Link href="/streamingText">text streaming test</Link>
+      <Link href="/autoResizeTextarea">Auto Resize Textarea</Link>
     </div>
   );
 }
