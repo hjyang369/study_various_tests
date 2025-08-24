@@ -6,6 +6,7 @@ export default function Home() {
       <Link href="/streamingText">text streaming test</Link>
       <Link href="/autoResizeTextarea">Auto Resize Textarea</Link>
       <Link href="/jsonFileReader">upload JSON and Read</Link>
+      <Link href="/apply-pwa">apply pwa</Link>
     </div>
   );
 }
