@@ -13,18 +13,21 @@ export default function ThemeDarkLight() {
   const toggleTheme = () => {
     const newTheme = theme === "light" ? "dark" : "light";
     setTheme(newTheme);
-    document.documentElement.setAttribute("data-theme", newTheme);
+    if (typeof document !== "undefined") {
+      document.documentElement.setAttribute("data-theme", newTheme);
+    }
   };
 
   // 현재 시스템 다크모드 확인 후 그에 맞는 값으로 첫 세팅을 해줌
   useEffect(() => {
-    const checkDarkMode = window.matchMedia("(prefers-color-scheme: dark)");
-    const mode = checkDarkMode.matches ? "dark" : "light";
-    setTheme(mode);
-    document.documentElement.setAttribute("data-theme", mode);
+    if (typeof window !== "undefined") {
+      const checkDarkMode = window.matchMedia("(prefers-color-scheme: dark)");
+      const mode = checkDarkMode.matches ? "dark" : "light";
+      setTheme(mode);
+      document.documentElement.setAttribute("data-theme", mode);
+      console.log(window.matchMedia("(prefers-color-scheme: dark)"));
+    }
   }, []);
-
-  console.log(window.matchMedia("(prefers-color-scheme: dark)"));
 
   return (
     <div>

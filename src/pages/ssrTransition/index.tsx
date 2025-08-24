@@ -4,6 +4,7 @@ import path from "path";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useRouter } from "next/router";
+import { GetServerSidePropsContext } from "next";
 
 interface MockData {
   id: number;
@@ -11,7 +12,7 @@ interface MockData {
   description: string;
 }
 
-export default function Home({ data }) {
+export default function Home(data: MockData[]) {
   const router = useRouter();
   const { t, i18n } = useTranslation("common"); // i18n은 기본적으로 사용할 수 있어야 함
 
@@ -40,7 +41,9 @@ export default function Home({ data }) {
   );
 }
 
-export async function getServerSideProps({ locale }) {
+export async function getServerSideProps({
+  locale,
+}: GetServerSidePropsContext) {
   const filePath = path.join(process.cwd(), "public", "data", "mockData.json");
   const jsonData = fs.readFileSync(filePath, "utf8");
   const data: MockData = JSON.parse(jsonData);
